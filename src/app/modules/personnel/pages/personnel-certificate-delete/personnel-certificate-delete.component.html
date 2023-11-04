@@ -1,0 +1,25 @@
+<h2>حذف مدرک پرسنل</h2>
+<div class="card bg-warning">
+    <div class="card-body bg-light">
+        <h3 class="card-title bg-warning">{{item.Certificate.Name}}</h3>
+        <div class="row m-3">
+            <div class="col-md-4">
+                سال اخذ: {{item.YearCatch}}
+            </div>
+            <div class="col-md-4">
+                معدل: {{item.Gpa}}
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-11 alert alert-danger mx-auto">
+                <span>
+                    آیا از حذف این مدرک مطمئن هستید؟
+                </span>
+                <input type="button" class="btn btn-danger" value="بله" (click)="onDelete()">
+            </div>
+        </div>
+        <div class="text-left">
+            <a [routerLink]="[personnelCertificateIndexUrl,personnelId]" class="btn btn-outline-secondary mt-3">بازگشت</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<h4 class="bg-secondary text-white container p-2">فهرست مدارک پرسنل</h4>
+<a class="btn btn-sm btn-success text-light mb-2" [routerLink]="[personnelCertificateNewUrl,personnelId]">مدرک پرسنل جدید</a>
+<div class="bg-light">
+    <div class="table table-responsive" >
+        <!-- <table> -->
+            <thead class="thead-light">
+                <tr>
+                    <th class="col-md-2">مدرک</th>
+                    <th class="col-md-2">سال اخذ</th>
+                    <th class="col-md-2">معدل</th>
+                    <th class="col-md-4"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr *ngFor="let item of pagedResult?.Results"> -->
+                <tr *ngFor="let item of personnelCertificateDTOs">
+                    <!-- <td class='col-md-2'>
+                        {{item.PersonnelId}}
+                    </td> -->
+                    <td class='col-md-2'>
+                        {{item.Certificate.Name}}
+                    </td>
+                    <td class='col-md-2'>
+                        {{item.YearCatch}}
+                    </td>
+                    <td class='col-md-2'>
+                        {{item.Gpa}}
+                    </td>
+                    <td class='col-md-4'>
+                        <input type="button" value="جزئیات" class="btn btn-sm btn-outline-primary mx-1"
+                            [routerLink]="[personnelCertificateDetailsUrl,item.Id]" />
+
+                        <input type="button" value="ویرایش" class="btn btn-sm btn-outline-warning mx-1"
+                            [routerLink]="[personnelCertificateEditUrl,item.Id]" />
+
+                        <input type="button" value="حذف" class="btn btn-sm btn-outline-danger mx-1"
+                            [routerLink]="[personnelCertificateDeleteUrl,item.Id]" />
+                    </td>
+                </tr>
+            </tbody>
+        <!-- </table> -->
+    </div>
+    <div class="d-flex justify-content-center bg-white text-light">
+        <!-- <mat-paginator #paginator style="background-color: transparent;"
+            (page)="handlePageEvent($event)" [length]="length" [pageSize]="pageSize" showFirstLastButtons="true"
+            [pageSizeOptions]="pageSizeOptions" hidePageSize=false [pageIndex]="pageIndex" aria-label="Select page">
+        </mat-paginator> -->
+    </div>
+</div>

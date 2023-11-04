@@ -1,0 +1,38 @@
+<h4 class="bg-secondary text-white container p-2">فهرست مدارک</h4>
+<a class="btn btn-sm btn-success text-light mb-2" [routerLink]="[certificateNewUrl]">مدرک جدید</a>
+<div class="bg-light">
+    <div class="table table-responsive">
+        <!-- <table> -->
+        <thead class="thead-light">
+            <tr>
+                <th class="col-md-6">نام</th>
+                <th class="col-md-6"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr *ngFor="let item of pagedResult?.Results"> -->
+            <tr *ngFor="let item of certificateDTOs">
+                <td class='col-md-6'>
+                    {{item.Name}}
+                </td>
+                <td class='col-md-6'>
+                    <input type="button" value="جزئیات" class="btn btn-sm btn-outline-primary mx-1"
+                        [routerLink]="[certificateDetailsUrl,item.Id]" />
+
+                    <input type="button" value="ویرایش" class="btn btn-sm btn-outline-warning mx-1"
+                        [routerLink]="[certificateEditUrl,item.Id]" />
+
+                    <input type="button" value="حذف" class="btn btn-sm btn-outline-danger mx-1"
+                        [routerLink]="[certificateDeleteUrl,item.Id]" />
+                </td>
+            </tr>
+        </tbody>
+        <!-- </table> -->
+    </div>
+    <div class="d-flex justify-content-center bg-white text-light">
+        <!-- <mat-paginator #paginator style="background-color: transparent;"
+            (page)="handlePageEvent($event)" [length]="length" [pageSize]="pageSize" showFirstLastButtons="true"
+            [pageSizeOptions]="pageSizeOptions" hidePageSize=false [pageIndex]="pageIndex" aria-label="Select page">
+        </mat-paginator> -->
+    </div>
+</div>

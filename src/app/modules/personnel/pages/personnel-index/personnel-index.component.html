@@ -1,0 +1,53 @@
+<h4 class="bg-secondary text-white container p-2">فهرست پرسنل</h4>
+<a class="btn btn-sm btn-success text-light mb-2" [routerLink]="[personnelNewUrl]">پرسنل جدید</a>
+<div class="bg-light">
+    <div class="table table-responsive" >
+        <!-- <table> -->
+            <thead class="thead-light">
+                <tr>
+                    <th class="col-md-2">نام</th>
+                    <th class="col-md-2">نام خانوادگی</th>
+                    <th class="col-md-2">سن</th>
+                    <th class="col-md-2">موبایل</th>
+                    <th class="col-md-4"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr *ngFor="let item of pagedResult?.Results"> -->
+                <tr *ngFor="let item of personnelDTOs">
+                    <td class='col-md-2'>
+                        {{item.FirstName}}
+                    </td>
+                    <td class='col-md-2'>
+                        {{item.LastName}}
+                    </td>
+                    <td class='col-md-2'>
+                        {{item.Age}}
+                    </td>
+                    <td class='col-md-2'>
+                        {{item.Mobile}}
+                    </td>
+                    <td class='col-md-4'>
+                        <input type="button" value="جزئیات" class="btn btn-sm btn-outline-primary mx-1"
+                            [routerLink]="[personnelDetailsUrl,item.Id]" />
+
+                        <input type="button" value="ویرایش" class="btn btn-sm btn-outline-warning mx-1"
+                            [routerLink]="[personnelEditUrl,item.Id]" />
+
+                        <input type="button" value="حذف" class="btn btn-sm btn-outline-danger mx-1"
+                            [routerLink]="[personnelDeleteUrl,item.Id]" />
+
+                        <input type="button" value="مدارک پرسنل" class="btn btn-sm btn-outline-info mx-1"
+                            [routerLink]="[personnelCertificateIndexUrl,item.Id]" />
+                    </td>
+                </tr>
+            </tbody>
+        <!-- </table> -->
+    </div>
+    <div class="d-flex justify-content-center bg-white text-light">
+        <!-- <mat-paginator #paginator style="background-color: transparent;"
+            (page)="handlePageEvent($event)" [length]="length" [pageSize]="pageSize" showFirstLastButtons="true"
+            [pageSizeOptions]="pageSizeOptions" hidePageSize=false [pageIndex]="pageIndex" aria-label="Select page">
+        </mat-paginator> -->
+    </div>
+</div>

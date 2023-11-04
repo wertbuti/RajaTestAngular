@@ -1,0 +1,17 @@
+<h2>جزئیات پرسنل</h2>
+<div class="card bg-warning">
+    <div class="card-body bg-light">
+        <h3 class="card-title bg-warning">{{item.FirstName}} {{item.LastName}}</h3>
+        <div class="row m-3">
+            <div class="col-md-4">
+                سن: {{item.Age}}
+            </div>
+            <div class="col-md-4">
+                شماره موبایل: {{item.Mobile}}
+            </div>
+        </div>
+        <div class="text-left">
+            <a [routerLink]="[personnelIndexUrl]" class="btn btn-outline-secondary mt-3">بازگشت</a>
+        </div>
+    </div>
+</div>
